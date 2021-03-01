@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>v1.03 Add 3 numbers</title>
+    <meta charset="utf-8" />
+    <script type="text/javascript">
+        function sum() {
+            var sum = 0;
+            var No1 = Number(document.getElementById('txt1').value);
+            var No2 = Number(document.getElementById('txt2').value);
+            var No3 = Number(document.getElementById('txt3').value);
+            sum = No1 + No2 + No3
+            prod = No1 * No2 * No3
+            var strAns = "The sum of " + No1 + ", " + No2 + " and " + No3 + " = " + sum
+            document.getElementById('txtSumValue').value = sum;
+            document.getElementById('txtWordSum').value = strAns;
+            document.getElementById('txtProdValue').value = prod;
+        }
+    </script>
+</head>
+<body>
+    <h1>Add 3 numbers (v1.03)</h1>
+        <h2>A product and concatenation statement are added</h2>
+    <p>Enter the numbers you want to sum:</p>
+    <form id="input">
+        <p>
+            <textarea id="txt1" rows="1" cols="20"></textarea>
+            <br />
+            <textarea id="txt2" rows="1" cols="20"></textarea>
+            <br />
+            <textarea id="txt3" rows="1" cols="20"></textarea>
+            <br />
+            <input id="Run" type="Button" value="run" onclick="sum()" />
+        </p>
+        <p>
+            <br />
+            The sum of the numbers is:<br />
+            <textarea id="txtSumValue" rows="1" cols="20"></textarea>
+            <br />
+            In words, we have:<br />
+            <textarea id="txtWordSum" rows="3" cols="20"></textarea>
+            <br />
+            The product of the numbers is:<br />
+            <textarea id="txtProdValue" rows="1" cols="20"></textarea>
+        </p>
+    </form>
+</body>
+</html>
