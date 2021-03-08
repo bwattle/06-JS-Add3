@@ -1,0 +1,59 @@
+﻿﻿<!-- Converted text entries to numbers for calculation -->
+<!-- 24/2/21 Nev -->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>v1.04 Add 3 numbers</title>
+    <meta charset="utf-8" />
+    <script type='text/javascript'>
+        function sum() {
+            var sum = 0; // declare sum as an integer
+            var prod = 0.0; // declare product as a float (decimal point)
+            var No1 = Number(document.getElementById('txt1').value); //convert to a number
+            var No2 = Number(document.getElementById('txt2').value);
+            var No3 = Number(document.getElementById('txt3').value);
+            // "isNaN" is a function which returns True if the parameter is Not a Number
+            // the || means "or", so if either of the 3 is Not A Number, then message
+            if (isNaN(No1) || isNaN(No2) || isNaN(No3)) {
+                alert("Please enter 3 integers!") //display message box
+            } else {
+                sum = No1 + No2 + No3  //create the sum as an integer
+                prod = No1 * No2 * No3 //create the product as an integer
+                // concatenate for the string statement
+                var strAns = "The sum of " + No1 + ", " + No2 + " and " + No3 + " = " + sum
+                // print the values in the relevant text box:
+                document.getElementById('txtSumValue').value = sum;
+                document.getElementById('txtWordSum').value = strAns;
+                document.getElementById('txtProdValue').value = prod;
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <h1>Add 3 numbers (v1.04)</h1>
+    <h2>Entries are validated before calculation</h2>
+    <p>Enter the numbers you want to sum:</p>
+    <form id="input">
+        <p>
+          <textarea id="txt1" rows="1" cols="20"></textarea>
+          <br />
+          <textarea id="txt2" rows="1" cols="20"></textarea>
+          <br />
+          <textarea id="txt3" rows="1" cols="20"></textarea>
+        </p>
+        <p><br />
+        <input id="Run" type="Button" value="run" onclick="sum()" /><br />
+        The sum of the numbers is:<br />
+        <textarea id="txtSumValue" rows="1" cols="20"></textarea>
+        <br />
+        In words, we have:<br />
+        <textarea id="txtWordSum" rows="3" cols="20"></textarea>
+        <br />
+        The product of the numbers is:<br />
+        <textarea id="txtProdValue" rows="1" cols="20"></textarea>
+        </p>
+    </form>
+</body>
+</html>
